@@ -21,7 +21,3 @@
     props: ['car_props']
 }
 </script>
-
-<style scoped>
-
-</style>

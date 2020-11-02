@@ -7,7 +7,7 @@
             </div>
             <div class="card-deck mb-3 text-center">
                 <div class="card mb-4 shadow-sm" v-for="trip_type in trip_types">
-                    <TripType v-bind:trip_props="trip_type"></TripType>
+                    <TripTypeCard v-bind:trip_props="trip_type"></TripTypeCard>
                 </div>
             </div>
         </div>
@@ -18,10 +18,10 @@
 
 <script>
 
-import TripType from "@/components/TripType";
+import TripTypeCard from "@/components/TripTypeCard";
 export default {
   name: 'Home',
-    components: {TripType},
+    components: {TripTypeCard},
     data() {
       return {
           trip_types: [

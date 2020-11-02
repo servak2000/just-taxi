@@ -17,7 +17,7 @@
 
 <script>
     export default {
-    name: "TripType",
+    name: "TripTypeCard",
     props: ['trip_props']
 
 }
