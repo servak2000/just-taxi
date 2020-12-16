@@ -47,6 +47,7 @@
 
 <script>
     import CarCard from "@/components/CarCard";
+    import Axios from "axios";
     export default {
         name: "CarsList",
         components: {CarCard},
@@ -56,38 +57,17 @@
                     manufacturers: ['BMW', 'Lada', 'Mersedes', 'VAZ'],
                     release_year: [2010, 2015, 2016, 2019]
                 },
-                cars_properties: [
-                    {
-                        model: "VAZ-2104",
-                        release_year: 2010,
-                        mileage: 10000
-                    },
-
-                    {
-                        model: "VAZ-2101",
-                        release_year: 2005,
-                        mileage: 100000
-                    },
-
-                    {
-                        model: "Mersedes GLA",
-                        release_year: 2015,
-                        mileage: 0
-                    },
-
-                    {
-                        model: "BMW X5",
-                        release_year: 2019,
-                        mileage: 20000
-                    },
-
-                    {
-                        model: "Lada Vesta",
-                        release_year: 2016,
-                        mileage: 15000
-                    },
-                ]
+                cars_properties: []
             }
+        },
+
+        created() {
+            const instance = Axios.create({
+              baseURL: 'http://localhost:1199/v1'
+            });
+
+            instance.get( '/cars-list/cars')
+                .then((response) => this.cars_properties = response.data)
         }
     }
 </script>
