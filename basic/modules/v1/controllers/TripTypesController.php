@@ -4,30 +4,27 @@
 namespace app\modules\v1\controllers;
 
 
+use app\modules\v1\models\TripType;
+use Yii;
+
 class TripTypesController extends ApiController
 {
     public function actionHome()
     {
-        $trip_types =  [
-            [
-                'id' => 1,
-                'name' => 'Эконом',
-                'max_price' => 200,
-                'description' => ['Выгодная цена', 'Ожидание не более 5 минут', 'Нет детского кресла']
-            ],
-            [
-                'id' => 2,
-                'name' => 'Стандарт',
-                'max_price' => 500,
-                'description' => ['Гибкие цены', 'В наличии детское кресло', 'Ожидание до 15 мин.']
-            ],
-            [
-                'id' => 3,
-                'name' => 'VIP',
-                'max_price' => 1000,
-                'description' => ['В наличии детское кресло', 'Ожидание до 30 мин.', 'Возможность выбрать водителя']
-            ]
-        ];
+        $trip_types = TripType::find()->all();
+
         return $trip_types;
     }
+
+    public function actionCreate()
+    {
+        $model = new TripType();
+        $model->load(Yii::$app->request->getBodyParams(), '');
+        $model->save();
+
+        return $model;
+    }
+
+
+
 }

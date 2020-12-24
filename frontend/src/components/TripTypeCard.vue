@@ -6,9 +6,7 @@
         <div class="card-body">
             <h1 class="card-title pricing-card-title"> до {{trip_props.max_price}}р. <small class="text-muted">/ поездка</small></h1>
             <ul class="list-unstyled mt-3 mb-4">
-                <li>{{trip_props.description[0]}}</li>
-                <li>{{trip_props.description[1]}}</li>
-                <li>{{trip_props.description[2]}}</li>
+                <li>{{trip_props.description}}</li>
             </ul>
             <button type="button" class="btn btn-lg btn-block btn-outline-primary">Выбрать</button>
         </div>

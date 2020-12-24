@@ -1,6 +1,6 @@
 <template>
     <div class="card">
-        <img class="card-img-top" src="https://cdn1.ozone.ru/multimedia/c500/1017455009.jpg" alt="Card image cap">
+        <img class="card-img-top" v-bind:src="car_props.image" alt="Card image cap">
         <div class="card-body">
             <h5 class="card-title"> {{car_props.model}} </h5>
             <p class="card-text">
