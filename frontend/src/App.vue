@@ -8,7 +8,9 @@
                 <router-link class="p-2 text-dark" v-bind:to="{name: 'Feedback'}">Отзывы</router-link>
                 <router-link class="p-2 text-dark" v-bind:to="{name: 'Cars'}">Наши автомобили</router-link>
             </nav>
-            <router-link class="btn btn-outline-primary" v-bind:to="{name: 'SignIn'}">Войти</router-link>
+          <router-link class="btn btn-outline-primary" v-bind:to="{name: 'Profile'}" v-if="user.isAuth()">{{user.username}}</router-link>
+          <router-link class="btn btn-outline-primary" v-bind:to="{name: 'SignIn'}" v-else>Войти</router-link>
+
         </header>
 
         <main>
@@ -18,7 +20,7 @@
         <footer class="pt-4 my-md-5 pt-md-5 border-top container">
             <div class="row">
                 <div class="col-12 col-md">
-                    <img class="mb-2" src="../public/img/logo.jpg" alt="" width="24" height="24">
+                    <img class="mb-2" src="https://wallpapershome.ru/images/wallpapers/royal-3840x2160-pianino-poligoni-abstrakciya-minimalizm-4k-5k-iphone-13492.jpg" alt="" width="24" height="24">
                     <small class="d-block mb-3 text-muted">&copy; 2017-2020</small>
                 </div>
                 <div class="col-6 col-md">
@@ -53,3 +55,13 @@
      </div>
  </template>
 
+<script>
+  import user from '@/components/user/user'
+  export default {
+    data() {
+      return {
+        user: user
+      }
+    }
+  }
+</script>

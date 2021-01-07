@@ -6,6 +6,7 @@ import Employees from "@/views/Employees"
 import Feedback from "@/views/Feedback"
 import Cars from "@/views/Cars"
 import SignIn from "@/views/SignIn";
+import Profile from "@/views/Profile";
 
 Vue.use(VueRouter)
 
@@ -39,6 +40,11 @@ const routes = [
     path: '/sign-in',
     name: 'SignIn',
     component: SignIn
+  },
+  {
+    path: '/profile',
+    name: 'Profile',
+    component: Profile
   }
 ]
 

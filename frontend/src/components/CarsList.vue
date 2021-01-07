@@ -35,7 +35,7 @@
 
             <div class="col-md-9">
                 <div class="row">
-                    <div class="col-lg-4" style="width: 18rem;" v-for="car_properties in cars_properties">
+                    <div class="col-lg-4" v-for="car_properties in cars_properties">
                         <CarCard v-bind:car_props="car_properties"></CarCard>
                     </div>
 
