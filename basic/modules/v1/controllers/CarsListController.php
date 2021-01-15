@@ -5,6 +5,7 @@ namespace app\modules\v1\controllers;
 
 use app\modules\v1\models\Car;
 use Yii;
+use yii\web\NotFoundHttpException;
 
 class CarsListController extends ApiController
 {
@@ -23,4 +24,18 @@ class CarsListController extends ApiController
 
         return $model;
     }
+
+    public function actionInfo($url)
+    {
+        $car = Car::find()
+            ->where(['url' => $url])
+            ->one();
+
+        if ($car === null) {
+            throw new NotFoundHttpException('Автомобиль не найден');
+        }
+
+        return $car;
+    }
+
 }

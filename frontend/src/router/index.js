@@ -7,6 +7,7 @@ import Feedback from "@/views/Feedback"
 import Cars from "@/views/Cars"
 import SignIn from "@/views/SignIn";
 import Profile from "@/views/Profile";
+import Car from "@/views/Car";
 
 Vue.use(VueRouter)
 
@@ -45,7 +46,12 @@ const routes = [
     path: '/profile',
     name: 'Profile',
     component: Profile
-  }
+  },
+  {
+    path: '/cars/:url',
+    name: 'Car',
+    component: Car
+  },
 ]
 
 const router = new VueRouter({

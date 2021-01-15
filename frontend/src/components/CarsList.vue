@@ -38,7 +38,6 @@
                     <div class="col-lg-4" v-for="car_properties in cars_properties">
                         <CarCard v-bind:car_props="car_properties"></CarCard>
                     </div>
-
                 </div>
             </div>
         </div>
